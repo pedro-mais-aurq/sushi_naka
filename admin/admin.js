@@ -2,7 +2,7 @@
 'use strict';
 const list=document.querySelector('#product-list'),status=document.querySelector('#status'),editor=document.querySelector('#product-dialog'),form=document.querySelector('#product-form'),contactForm=document.querySelector('#contact-form'),deleteDialog=document.querySelector('#delete-dialog');let state,editingId=null,deletingId=null,pendingPhoto=null,photoLoading=false,photoRequest=0;
 const upload=document.querySelector('#photo-upload'),preview=document.querySelector('#photo-preview'),photoStatus=document.querySelector('#photo-status'),useLibrary=document.querySelector('#use-library');
-function updatePreview(){preview.src=pendingPhoto||'/assets/'+form.elements.namedItem('image').value+'.webp';useLibrary.hidden=!pendingPhoto}
+function updatePreview(){preview.src=pendingPhoto||NakaDB.photoSource({image:form.elements.namedItem('image').value});useLibrary.hidden=!pendingPhoto}
 function resetPhoto(){photoRequest++;photoLoading=false;pendingPhoto=null;upload.value='';photoStatus.textContent='';form.querySelector('[type=submit]').disabled=false;updatePreview()}
 form.elements.namedItem('image').addEventListener('change',resetPhoto);useLibrary.onclick=resetPhoto;
 editor.addEventListener('close',()=>{photoRequest++;photoLoading=false});
