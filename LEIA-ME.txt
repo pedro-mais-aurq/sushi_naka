@@ -1,0 +1,10 @@
+Sushi Naka — site completo
+
+Inclui landing page, painel /admin/ e envio de fotos.
+Para executar localmente, abra um terminal nesta pasta e rode:
+python -m http.server 8000
+
+Site: http://localhost:8000
+Painel: http://localhost:8000/admin/
+
+Os produtos, contatos e fotos adicionados no painel são salvos no IndexedDB do navegador. Os dados pessoais inseridos no navegador não fazem parte deste ZIP.
