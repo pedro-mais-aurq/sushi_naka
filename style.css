@@ -492,7 +492,34 @@ em {
     align-items: center;
     min-height: 790px;
     padding-top: 140px;
-    padding-bottom: 140px
+    padding-bottom: 140px;
+    background-color: #111111;
+    color: #f5f0e8
+}
+
+.experience .eyebrow,
+.experience-copy h2,
+.taste-caption span {
+    color: #f5f0e8
+}
+
+.experience-copy h2 em {
+    color: var(--red)
+}
+
+.experience-copy .body-copy,
+.experience-options button,
+.taste-caption small,
+.stage-detail {
+    color: #f5f0e8
+}
+
+.experience-copy .text-link {
+    color: var(--red)
+}
+
+.experience-copy .text-link:hover {
+    color: #9f1218
 }
 
 .experience-copy {
@@ -521,7 +548,7 @@ em {
     flex-wrap: wrap
 }
 
-.experience-options button {
+.experience .experience-options button {
     padding: 7px 0 12px;
     background: none;
     border: 0;
@@ -589,7 +616,7 @@ em {
     letter-spacing: .04em;
     line-height: 1;
     color: transparent;
-    -webkit-text-stroke: 1px #c4b9a4
+    -webkit-text-stroke: 1px #f5f0e8
 }
 
 .stage-kanji {
@@ -600,7 +627,7 @@ em {
     font-family: var(--serif);
     font-size: 70px;
     line-height: 1;
-    color: #bd171d4a
+    color: var(--red)
 }
 
 .experience-image {
@@ -672,7 +699,7 @@ em {
     right: 1%;
     bottom: 0;
     font: italic 14px/1.5 var(--serif);
-    color: var(--muted);
+    color: #f5f0e8;
     text-align: right;
     max-width: 150px
 }
