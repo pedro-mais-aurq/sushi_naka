@@ -1,10 +1,15 @@
-Sushi Naka — site completo
+SUSHI NAKA — ATUALIZAÇÃO 2026
 
-Inclui landing page, painel /admin/ e envio de fotos.
-Para executar localmente, abra um terminal nesta pasta e rode:
-python -m http.server 8000
+1. Descompacte o arquivo e abra a pasta sushi_naka-main.
+2. Execute: python3 -m http.server 8080
+3. Abra: http://localhost:8080/
+4. Cardápio: http://localhost:8080/cardapio/
+5. Painel local: http://localhost:8080/admin/
 
-Site: http://localhost:8000
-Painel: http://localhost:8000/admin/
+As alterações do painel ficam neste navegador e domínio. Para atualizar o conteúdo para todos os visitantes, edite catalog.json e execute python3 scripts/build.py.
 
-Os produtos, contatos e fotos adicionados no painel são salvos no IndexedDB do navegador. Os dados pessoais inseridos no navegador não fazem parte deste ZIP.
+O cardápio é uma seleção ilustrativa com 16 pratos. Os preços ficam como “Consulte a casa” até inserir uma tabela atual. Receita, porção e disponibilidade devem ser confirmadas com o restaurante.
+
+O workflow .github/workflows/deploy.yml publica a pasta dist no GitHub Pages. Escolha Settings > Pages > Source > GitHub Actions no repositório.
+
+Veja README.md para documentação, fontes da pesquisa e verificação, e ASSETS.md para o mapa das imagens.

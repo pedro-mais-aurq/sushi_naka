@@ -1,0 +1,12 @@
+{
+  "name": "sushi-naka",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sushi Naka — tradição japonesa desde 1987",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "pretest": "npm run build",
+    "start": "python3 -m http.server 8080",
+    "test": "node --test tests/contracts.test.cjs && python3 tests/static.py"
+  }
+}

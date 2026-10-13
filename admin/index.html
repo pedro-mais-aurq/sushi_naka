@@ -23,8 +23,7 @@
                 <h1>Cardápio & contatos.</h1>
             </div><button class="button" id="new-product" disabled>Adicionar produto</button>
         </div>
-        <p class="local-note">As alterações ficam salvas neste navegador e aparecem na landing page neste mesmo
-            dispositivo.</p>
+        <p class="local-note">As alterações ficam salvas neste navegador e aparecem no início, no cardápio e nas páginas dos pratos deste mesmo dispositivo.</p>
         <p id="status" role="status" aria-live="polite">Carregando o banco local…</p>
         <section class="admin-panel">
             <div class="panel-heading">
@@ -38,7 +37,7 @@
                         maxlength="300"></textarea></label><label>Horários<textarea name="hours" rows="3" required
                         maxlength="500"></textarea></label>
                 <div class="form-grid"><label>Telefone<input name="phone" required
-                            maxlength="40"></label><label>E-mail<input name="email" type="email" required
+                            maxlength="40"></label><label>E-mail (opcional)<input name="email" type="email"
                             maxlength="100"></label></div><button class="button" type="submit" disabled>Salvar
                     contatos</button>
             </form>
@@ -49,18 +48,24 @@
         <h2 id="editor-title">Adicionar produto</h2>
         <form id="product-form"><label>Nome<input name="name" required maxlength="80"></label>
             <div class="form-grid"><label>Preço (R$)<input name="price" type="number" min="0" max="99999" step="0.01"
-                        required></label><label>Categoria<select name="category">
+                        placeholder="Consulte a casa"></label><label>Categoria<select name="category">
                         <option value="combinados">Combinados</option>
-                        <option value="rolls">Sushis & rolls</option>
+                        <option value="rolls">Sushi & sashimi</option>
+                        <option value="entradas">Entradas</option>
                         <option value="quentes">Pratos quentes</option>
                     </select></label></div><label>Descrição<textarea name="description" rows="3" required
                     maxlength="300"></textarea></label><label>Detalhes da porção<input name="details" maxlength="100"
                     placeholder="8 peças · Serve 1 pessoa"></label><label>Destaque<input name="badge" maxlength="60"
                     placeholder="O queridinho da casa"></label>
+            <label>Texto da página do prato<textarea name="story" rows="3" maxlength="2000" placeholder="Conte um pouco mais sobre o sabor e o preparo."></textarea></label>
+            <label>Nome em japonês (opcional)<input name="japanese" maxlength="60"></label>
+            <label>Ingredientes ilustrados, separados por vírgula<input name="ingredients" maxlength="500"></label>
+            <label>Alérgenos da composição, separados por vírgula<input name="allergens" maxlength="500"></label>
+            <label class="checkbox-field"><input type="checkbox" name="featured"> Destacar na página inicial</label>
             <div class="photo-editor"><img id="photo-preview" src="../assets/combinado.webp"
                     alt="Prévia da foto do produto" width="400" height="240"><label>Enviar uma nova foto<input
                         id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label>
-                <p class="upload-hint">JPG, PNG, WebP ou GIF · até 10 MB. A foto será otimizada para o site.</p>
+                <p class="upload-hint">JPG, PNG, WebP ou GIF · até 10 MB. PNGs e WebPs mantêm a transparência. GIFs usam o primeiro quadro.</p>
                 <p id="photo-status" role="status" aria-live="polite"></p><button class="secondary" type="button"
                     id="use-library" hidden>Usar foto da biblioteca</button>
             </div><label>Foto da biblioteca<select name="image">
@@ -80,6 +85,7 @@
                 class="secondary" id="cancel-delete">Cancelar</button></div>
         <p id="delete-error" role="alert"></p>
     </dialog>
+    <script src="../catalog.js"></script>
     <script src="../database.js"></script>
     <script src="photo.js"></script>
     <script src="admin.js"></script>
